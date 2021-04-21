@@ -1,15 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+::selection{
+    color: rgba(0, 0, 0, 0.8);
+    background-color: chartreuse;
+}
+
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #f6f5f4;
-    color:rgba(0, 0, 0, 0.8);
+    color:rgba(0, 0, 0, 1);
 }
 
 nav {
     display: flex;
     justify-content: space-evenly;
     padding: 8px 0px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a, a::marker {
+    color: initial;
+    text-decoration: none;
 }
 
 .container {
@@ -89,7 +103,7 @@ nav {
 
 /* Change background color of list item when being hovered */
 .dropdown li:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    
 }
 
 /* Show the direct sub dropdown when hovering the list item */
