@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 ::selection{
-    color: rgba(0, 0, 0, 0.8);
-    background-color: chartreuse;
+    color: rgba(0, 0, 0, 1);
+    background-color: #79ffe1;
 }
 
 body{
@@ -124,4 +124,12 @@ footer{
 
 body{
     margin: 0;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: row;
+}
+.img__pbs{
+    width: max-content;margin:auto 1em;
 }
