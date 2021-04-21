@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f6f5f4;
+    color:rgba(0, 0, 0, 0.8);
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px 0px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.container__main {
+    /* Take the remaining height */
+    flex-grow: 1;
+
+    /* Layout the left sidebar, main content and right sidebar */
+    display: flex;
+    flex-direction: row;
+}
+
+.container__left {
+    width: 25%;
+}
+
+.container__middle {
+    /* Take the remaining width */
+    flex-grow: 1;
+}
+
+.container__right {
+    width: 20%;
+}
+
+.dropdown {
+    /* Border */
+  
+    display: flex;
+
+    /* Reset list styles */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown li {
+    /* Spacing */
+    padding: 8px;
+
+    /* Used to position the sub dropdown */
+    position: relative;
+}
+
+/* The sub dropdown */
+.dropdown ul {
+    /* Border */
+    
+
+    /* Hidden by default */
+    display: none;
+
+    /* Absolute position */
+    left: 0;
+    position: absolute;
+    top: 100%;
+
+    /* Reset styles */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    /* Width */
+    width: 200px;
+}
+
+/* The second level sub dropdown */
+.dropdown ul ul {
+    left: 100%;
+    position: absolute;
+    top: 0;
+}
+
+/* Change background color of list item when being hovered */
+.dropdown li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Show the direct sub dropdown when hovering the list item */
+.dropdown li:hover > ul {
+    display: block;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.centering {
+    max-width: max-content;
+    margin: 0 auto;
+}
+
+body{
+    margin: 0;
+}
