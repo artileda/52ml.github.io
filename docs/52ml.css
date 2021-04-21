@@ -46,7 +46,8 @@ a, a::marker {
 
 .container__middle {
     /* Take the remaining width */
-    flex-grow: 1;
+    flex-grow: 0.8;
+    max-width: 40em;
 }
 
 .container__right {
