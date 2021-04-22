@@ -1,16 +1,17 @@
 # Buildah: An alternative containerization tool
 
 Docker is somewhat became trendsetter for containerization technology alongside with Kubernetes (k8s, for short).
-Docker and K8s the is tool for serving containerization but had fundamental different, Docker job is do application containerization than isolate app with host system when Kubernetes is abstracting many machine to do containerization and manage container execution.
+Docker and K8s are tool for serving containerization but had fundamental different. Docker job is do application containerization that isolate application with host system when Kubernetes is abstracting many machine to do containerization and manage container execution (orchestration).
 
 ## What is Buildah
 
-Buildah is new kid on the block from Red Hat which contain superset of Docker functionality for creating containers and work well with K8s (thank CRI-O Standard).
+Buildah is new kid on the block from Red Hat, A tool for creating containers (superset of docker functionality) and work well with K8s (thank CRI-O).
 
 Bulidah had sibling : Podman and Skopeo (you can call it, the Trinity of Container). Those sibling provide complementary work for Buildah.
 
+- Buildah : Building the container
 - Podman : Running the container
-- Skopeo : Transfer container images
+- Skopeo : Transfering the container
 
 Buildah work by using terminal command, lets took example from this Dockerfile
 
@@ -26,6 +27,16 @@ buildah from scratch
 or 
 
 Run the Dockerfile directly using Buildah, since Buildah support Dockerfile configuration.
+
+## Why RedHat brought this three kid to World
+
+The main reason is to make containerization less bloat and more secure, so Red Hat come with solution to bring up Buildah, Podman and Skopeo. Those giving functionality like Docker in rootless and daemonless manner. 
+
+Rootless meaning you do not any superuser access to work with your container tool, which improve you security by reducing attack vector to pwning you device.
+
+You don't need create or export container while running container in production, Red Hat said let split this up then it turn to those Trinity of Container.
+
+Daemonless making you device less runing any daemon who possesing you memory and resources device.
 
 ## The Basic
 
@@ -64,4 +75,6 @@ Time to taste buildah, [you need install it first](https://github.com/containers
     buildah help
     ```
 
-Remember Buildah just work for building contianer as it name.
+Remember, Buildah just work for building contianer as it name.
+
+[Click here If you want to learn more about The Trinity of Containers.](http://redhatgov.io/workshops/containers_101/)

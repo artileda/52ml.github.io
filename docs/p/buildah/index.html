@@ -33,23 +33,26 @@
      </h1>
      <p>
       Docker is somewhat became trendsetter for containerization technology alongside with Kubernetes (k8s, for short).
-Docker and K8s the is tool for serving containerization but had fundamental different, Docker job is do application containerization than isolate app with host system when Kubernetes is abstracting many machine to do containerization and manage container execution.
+Docker and K8s are tool for serving containerization but had fundamental different. Docker job is do application containerization that isolate application with host system when Kubernetes is abstracting many machine to do containerization and manage container execution (orchestration).
      </p>
      <h2>
       What is Buildah
      </h2>
      <p>
-      Buildah is new kid on the block from Red Hat which contain superset of Docker functionality for creating containers and work well with K8s (thank CRI-O Standard).
+      Buildah is new kid on the block from Red Hat, A tool for creating containers (superset of docker functionality) and work well with K8s (thank CRI-O).
      </p>
      <p>
       Bulidah had sibling : Podman and Skopeo (you can call it, the Trinity of Container). Those sibling provide complementary work for Buildah.
      </p>
      <ul>
       <li>
+       Buildah : Building the container
+      </li>
+      <li>
        Podman : Running the container
       </li>
       <li>
-       Skopeo : Transfer container images
+       Skopeo : Transfering the container
       </li>
      </ul>
      <p>
@@ -67,6 +70,21 @@ Docker and K8s the is tool for serving containerization but had fundamental diff
      </p>
      <p>
       Run the Dockerfile directly using Buildah, since Buildah support Dockerfile configuration.
+     </p>
+     <h2>
+      Why RedHat brought this three kid to World
+     </h2>
+     <p>
+      The main reason is to make containerization less bloat and more secure, so Red Hat come with solution to bring up Buildah, Podman and Skopeo. Those giving functionality like Docker in rootless and daemonless manner.
+     </p>
+     <p>
+      Rootless meaning you do not any superuser access to work with your container tool, which improve you security by reducing attack vector to pwning you device.
+     </p>
+     <p>
+      You don’t need create or export container while running container in production, Red Hat said let split this up then it turn to those Trinity of Container.
+     </p>
+     <p>
+      Daemonless making you device less runing any daemon who possesing you memory and resources device.
      </p>
      <h2>
       The Basic
@@ -126,7 +144,10 @@ Docker and K8s the is tool for serving containerization but had fundamental diff
       </li>
      </ol>
      <p>
-      Remember Buildah just work for building contianer as it name.
+      Remember, Buildah just work for building contianer as it name.
+     </p>
+     <p>
+      <a href="http://redhatgov.io/workshops/containers_101/">Click here If you want to learn more about The Trinity of Containers.</a>
      </p>
     </article>
     <nav class="container__right"></nav>
