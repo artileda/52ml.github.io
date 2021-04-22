@@ -28,15 +28,15 @@ or
 
 Run the Dockerfile directly using Buildah, since Buildah support Dockerfile configuration.
 
-## Why RedHat brought this three kid to World
+## Why RedHat brought those three kid to World
 
 The main reason is to make containerization less bloat and more secure, so Red Hat come with solution to bring up Buildah, Podman and Skopeo. Those giving functionality like Docker in rootless and daemonless manner. 
 
-Rootless meaning you do not any superuser access to work with your container tool, which improve you security by reducing attack vector to pwning you device.
+Rootless meaning you not need any superuser access to work with your container tool, which improve you security by reducing attack vector to pwning you device.
 
-You don't need create or export container while running container in production, Red Hat said let split this up then it turn to those Trinity of Container.
+You don't need create or export container functionality in single application while running container in production, Red Hat said let split this up to piece then it turn to those Trinity of Container.
 
-Daemonless making you device less runing any daemon who possesing you memory and resources device.
+Daemonless, making you device less running any daemon who possesing you memory and resources of your device.
 
 ## The Basic
 
