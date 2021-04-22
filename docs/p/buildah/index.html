@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>
+   Buildah: An alternative containerization tool — 52ml's Engineering Blog
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/52ml.css" rel="stylesheet">
+  <meta name="generator" content="soupault">
+  <meta name="generator" content="soupault">
+  <title></title>
+ </head>
+ <body>
+  <div class="container">
+   <header>
+    <nav>
+     <strong style="padding: 8px;">
+        <a href="/">52ml's Engineering Blog</a>
+    </strong>
+     <ul class="dropdown">
+      <li>
+       <a href="/about/">About</a>
+      </li>
+     </ul>
+    </nav>
+   </header>
+   <main class="container__main">
+    <aside class="container__left"></aside>
+    <article class="container__middle">
+     <h1>
+      Buildah: An alternative containerization tool
+     </h1>
+     <p>
+      Docker is somewhat became trendsetter for containerization technology alongside with Kubernetes (k8s, for short).
+Docker and K8s the is tool for serving containerization but had fundamental different, Docker job is do application containerization than isolate app with host system when Kubernetes is abstracting many machine to do containerization and manage container execution.
+     </p>
+     <h2>
+      What is Buildah
+     </h2>
+     <p>
+      Buildah is new kid on the block from Red Hat which contain superset of Docker functionality for creating containers and work well with K8s (thank CRI-O Standard).
+     </p>
+     <p>
+      Bulidah had sibling : Podman and Skopeo (you can call it, the Trinity of Container). Those sibling provide complementary work for Buildah.
+     </p>
+     <ul>
+      <li>
+       Podman : Running the container
+      </li>
+      <li>
+       Skopeo : Transfer container images
+      </li>
+     </ul>
+     <p>
+      Buildah work by using terminal command, lets took example from this Dockerfile
+     </p>
+     <pre><code class="language-docker">from scratch
+</code></pre>
+     <p>
+      to do than in Buildah, you run on terminal
+     </p>
+     <pre><code class="language-sh">buildah from scratch
+</code></pre>
+     <p>
+      or
+     </p>
+     <p>
+      Run the Dockerfile directly using Buildah, since Buildah support Dockerfile configuration.
+     </p>
+     <h2>
+      The Basic
+     </h2>
+     <p>
+      Time to taste buildah, <a href="https://github.com/containers/buildah/blob/master/install.md">you need install it first</a>.
+     </p>
+     <ol>
+      <li>
+       <p>
+        Grabbing image
+       </p>
+       <pre><code>buildah pull [image name]
+</code></pre>
+      </li>
+      <li>
+       <p>
+        Seeing all image
+       </p>
+       <pre><code>buildah list
+</code></pre>
+      </li>
+      <li>
+       <p>
+        Creating container from image
+       </p>
+       <pre><code>buildah from [image name]
+</code></pre>
+      </li>
+      <li>
+       <p>
+        Renaming the container
+       </p>
+       <pre><code>buildah rename [old name] [new name]
+</code></pre>
+      </li>
+      <li>
+       <p>
+        Mounting filesystem container
+       </p>
+       <pre><code>buildah mount [container name]
+</code></pre>
+      </li>
+      <li>
+       <p>
+        Unmounting filesystem container
+       </p>
+       <pre><code>buildah unmount [container name]
+</code></pre>
+      </li>
+      <li>
+       <p>
+        To see all available options
+       </p>
+       <pre><code>buildah help
+</code></pre>
+      </li>
+     </ol>
+     <p>
+      Remember Buildah just work for building contianer as it name.
+     </p>
+    </article>
+    <nav class="container__right"></nav>
+   </main>
+   <footer>
+    <div class="centering flex-col">
+     <a href="/license" rel="license" class="img__pbs"><img src="/cc-by-4.0.png" alt="Creative Commons License"></a>
+              <a href="https://soupault.app/"><img src="/powered_by_soupault.png" class="img__pbs"></a>
+    </div>
+   </footer>
+  </div>
+ </body>
+</html>

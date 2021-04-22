@@ -133,3 +133,7 @@ body{
 .img__pbs{
     width: max-content;margin:auto 1em;
 }
+
+.container__middle a {
+    color: rgb(0, 112, 243);
+}
