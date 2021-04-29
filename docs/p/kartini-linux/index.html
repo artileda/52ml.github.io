@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>
+   Kartini Linux : A historical brief and design decision. — 52ml's Engineering Blog
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/52ml.css" rel="stylesheet">
+  <meta name="generator" content="soupault">
+  <meta name="generator" content="soupault">
+  <title></title>
+ </head>
+ <body>
+  <div class="container">
+   <header>
+    <nav>
+     <strong style="padding: 8px;">
+        <a href="/">52ml's Engineering Blog</a>
+    </strong>
+     <ul class="dropdown">
+      <li>
+       <a href="/about/">About</a>
+      </li>
+     </ul>
+    </nav>
+   </header>
+   <main class="container__main">
+    <aside class="container__left"></aside>
+    <article class="container__middle">
+     <h1>
+      Kartini Linux : A historical brief and design decision.
+     </h1>
+     <p>
+      Last year (about 3 year ago), My brain came with the idea of building a linux distribution with a minimal, customizable,
+and lightweight approach.
+     </p>
+     <p>
+      This idea was marching my head when I was with my friend crossing the road on a middle rice field (around 17 February 2018).
+My distribution idea is influenced by many inspiring distros like Arch, Alpine, CRUX, KISS and Linux From Scratch.
+     </p>
+     <p>
+      Hence, Kartini came into existence. The name Kartini did not come from Indonesia women emancipation Hero instead my ex-friend
+last name.
+     </p>
+     <h2>
+      3-years Stalemate
+     </h2>
+     <p>
+      Sadly this project stalled almost 3 years and many technical specification changes since then, the reason is my college task
+is too overwhelming, lack research about linux distribution internals and of course the mood of those who hate my ideas.
+     </p>
+     <p>
+      This happened due to many bad decisions on writing my package manager to manage my distribution package and of course maintaining
+package consensus, in short broken flow to prioritize features I want to develop first.
+     </p>
+     <p>
+      Felt like a mistake to write my own package manager because there are a lot of build systems that help me get a job done and
+the worst is rewriting it to another language without clear feature specification.
+     </p>
+     <p>
+      From programming language selection until standard procedure for handling packages. The first plan i want write the package
+manager on Ruby, then the second with Go ,and the last with OCaml, The result after rewrite through many language I learn
+something about language selection
+     </p>
+     <ul>
+      <li>
+       <p>
+        A software that is required to run on a low-level environment, such an embedded and system level thing, needs to be
+built into a static native binary which can save a lot of time than satisfying the dependencies due limited
+space and dependencies that are harder to maintain in that level. Here is why I choose Go and OCaml because
+it supports static native binary.
+       </p>
+      </li>
+      <li>
+       <p>
+        Programming language ecosystem maturity, these factors had a significant impact on your productivity. Maturity of
+library and tooling give you cost-effective time saving due not reinvent many wheels on your program (except your wanna
+to contribute to the ecosystem).
+       </p>
+      </li>
+     </ul>
+     <p>
+      When rewriting in Go and OCaml, I start to adapt with the KISS package system standard and it begins to show good
+output. I got mvp but i realize this not enough, i still need additional mechanism to improving developer
+experience and my mistake is
+     </p>
+     <ul>
+      <li>
+       <p>
+        Standardization and flow specification of the software, this should be mature before you hand get dirty with code.
+My mistake is too many spec changes and result none.
+       </p>
+      </li>
+      <li>
+       <p>
+        Clear purpose and consistency, this what made kartini meet stalemate and sleep about 3 years followed above
+complication.
+       </p>
+      </li>
+     </ul>
+     <p>
+      I admit this can be considered bad practices of software engineering made by me. It requires good both hard skill
+and proper way to maintain productivity of yourself in work to endure an idea to become real.
+     </p>
+     <h2>
+      Resolution
+     </h2>
+     <p>
+      On April 25 2021, I had done implementing half package manager specification (this heavily inspired by KISS package
+system) and being able to build minimal filesystems took a month to revive this idea back to my brain.
+     </p>
+     <ul>
+      <li>
+       <a href="https://github.com/kartini-linux">The Package Consensus Repository</a>
+      </li>
+      <li>
+       <a href="https://github.com/52ml/kartini">The Package Manager Repository</a>
+      </li>
+     </ul>
+     <p>
+      Package manager progress gave me a path to eagerly continuing my idea.
+     </p>
+     <p>
+      Now, I am dealing with some bigger
+problems : what I want to distribute and how it form output. Of course, we need init, libc , kernel , boot, GUI and other major utility
+tools in our filesystem to distribute but the real problem is how it will look like. So the decision i took
+     </p>
+     <ul>
+      <li>
+       Init : Runit
+      </li>
+      <li>
+       Libc : Glibc (this will be replace with musl + gcompat in future)
+      </li>
+      <li>
+       Boot : Syslinux
+      </li>
+      <li>
+       Utility : Busybox
+      </li>
+      <li>
+       Package Manager: kartini
+      </li>
+      <li>
+       GUI: IceWM with X server
+      </li>
+     </ul>
+     <p>
+      This decision was based on a lightweight, minimal and customizable approach. I felt glibc is thing not lightweight
+so i will replace it with musl + gcompact (in order to make it compatible with binary builded in glibc) in future,
+because i still pursue how make this distribution usable, can be distribute without much obstacle and running without hussle
+in near time.
+     </p>
+     <p>
+      Until this day I’m still messing with basic standard build and its configuration, surely I’m really new to this and
+I hope I can fight till the end.
+     </p>
+     <p>
+      This post will be updated as I continue to develop it, and need to learn how to
+manage time properly both developing, rest time and college stuff.
+     </p>
+    </article>
+    <nav class="container__right"></nav>
+   </main>
+   <footer>
+    <div class="centering flex-col">
+     <a href="/license" rel="license" class="img__pbs"><img src="/cc-by-4.0.png" alt="Creative Commons License"></a>
+              <a href="https://soupault.app/"><img src="/powered_by_soupault.png" class="img__pbs"></a>
+    </div>
+   </footer>
+  </div>
+ </body>
+</html>

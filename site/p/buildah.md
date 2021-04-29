@@ -1,6 +1,6 @@
 # Buildah: An alternative containerization tool
 
-Docker is somewhat became trendsetter for containerization technology alongside with Kubernetes (k8s, for short).
+Docker somewhat became trendsetter for containerization technology alongside with Kubernetes (k8s, for short).
 Docker and K8s are tool for serving containerization but had fundamental different. Docker job is do application containerization that isolate application with host system when Kubernetes is abstracting many machine to do containerization and manage container execution (orchestration).
 
 ## What is Buildah
