@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>
+   Musl-libc : An alternative C Library. — 52ml's Engineering Blog
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="/52ml.css" rel="stylesheet">
+  <meta name="generator" content="soupault">
+  <meta name="generator" content="soupault">
+  <title></title>
+ </head>
+ <body>
+  <div class="container">
+   <header>
+    <nav>
+     <strong style="padding: 8px;">
+        <a href="/">52ml's Engineering Blog</a>
+    </strong>
+     <ul class="dropdown">
+      <li>
+       <a href="/about/">About</a>
+      </li>
+     </ul>
+    </nav>
+   </header>
+   <main class="container__main">
+    <aside class="container__left"></aside>
+    <article class="container__middle">
+     <h1>
+      Musl-libc : An alternative C Library.
+     </h1>
+     <p>
+      C Library (<strong>libc</strong>, for short) provides standard library functions such as maths,
+, input/output, memory, and task related to operating system internal on C programming language.
+     </p>
+     <p>
+      In my previous article about Kartini Linux I mentioning GLibc, GLibc is short for GNU Lib C is
+an implementation of the C standard library started by GNU Project and the most widely used C Library.
+     </p>
+     <p>
+      There many various implementations other than GLibc:
+     </p>
+     <ul>
+      <li>
+       <a href="http://musl.libc.org/">Musl-libc</a>
+      </li>
+      <li>
+       <a href="https://www.fefe.de/dietlibc/">Dietlibc</a>
+      </li>
+      <li>
+       <a href="https://uclibc-ng.org/">uClibC</a>
+      </li>
+      <li>
+       <a href="http://www.sourceware.org/newlib/">Newlib</a>
+      </li>
+     </ul>
+     <p>
+      Why that many implementations of C Library ? the answer is a target of compilation, some C Library are
+intended is focus on an embedded program, wide-range CPU architecture support,a smaller binary program, supporting a Linux system, etc.
+     </p>
+     <h2>
+      What is Musl - Libc exactly ?
+     </h2>
+     <p>
+      According to it <a href="http://musl.libc.org/">official site</a>, <strong>musl</strong> is an implementation of the C standard library built on top of the Linux system call API, including interfaces defined in the base language standard, POSIX, and widely agreed-upon extensions.
+     </p>
+     <p>
+      Musl tend to be simple, lightweight and ease to deploy despite it corretness to standard.
+     </p>
+     <p>
+      You can download pre-build binary toolchain to ease do cross/native musl compilation, <a href="https://musl.cc/">musl.cc</a>.
+     </p>
+     <h2>
+      My story with musl
+     </h2>
+     <p>
+      The first time I using Musl when I am using Alpine Linux after migrating from Arch Linux as my distro for daily basis usage.
+Sometimes I meet an error when an encounter with AppImage and other single binary due they find symbolic
+function provided by GLibc. This can be mitigated by compiling its source directly against Musl-Libc as it C Library.
+     </p>
+     <p>
+      Of course there another solution for this occassion, Musl is not fully compatible with
+ABI provided by Glibc, to overcome this Adelie Linux make a library bridging these incompatibilities between Glibc and Musl.
+So <strong>gcompat</strong> come into existence. Unfortunately, I have not tried it.
+     </p>
+     <p>
+      C Library had a crucial role in distribution due it works as a building block alongside kernel and operating system utilities. Without it
+the program could not run well, even can crash whole distribution because the whole program in distro linking against it (except static linked binary executable).
+     </p>
+    </article>
+    <nav class="container__right"></nav>
+   </main>
+   <footer>
+    <div class="centering flex-col">
+     <a href="/license" rel="license" class="img__pbs"><img src="/cc-by-4.0.png" alt="Creative Commons License"></a>
+              <a href="https://soupault.app/"><img src="/powered_by_soupault.png" class="img__pbs"></a>
+    </div>
+   </footer>
+  </div>
+ </body>
+</html>
