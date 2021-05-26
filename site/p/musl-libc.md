@@ -25,7 +25,7 @@ You can download pre-build binary toolchain to ease do cross/native musl compila
 
 ## My story with musl
 
-The first time I using Musl when I am using Alpine Linux after migrating from Arch Linux as my distro for daily basis usage. 
+The first time I encounter with Musl when I am using Alpine Linux after migrating from Arch Linux as my distro for daily basis usage. 
 Sometimes I meet an error when an encounter with AppImage and other single binary due they find symbolic
 function provided by GLibc. This can be mitigated by compiling its source directly against Musl-Libc as it C Library. 
 
